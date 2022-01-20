@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import * as React from 'react';
 import {
 	isBoolean,
 	useIsomorphicLayoutEffect as useLayoutEffect,
@@ -21,7 +21,7 @@ import { observeRect } from './observe-rect';
  * Rect renders a component that passes the measured rect to its children.
  */
 export const Rect = ({ onChange, observe = true, children }) => {
-	const ref = useRef(null);
+	const ref = React.useRef(null);
 	const rect = useRect(ref, { observe, onChange });
 	return children({ ref, rect });
 };
@@ -45,12 +45,12 @@ export function useRect(nodeRef, observeOrOptions) {
 		onChange = observeOrOptions?.onChange;
 	}
 
-	let [element, setElement] = useState(nodeRef.current);
-	let initialRectIsSet = useRef(false);
-	let initialRefIsSet = useRef(false);
-	let [rect, setRect] = useState(null);
-	let onChangeRef = useRef(onChange);
-	let stableOnChange = useCallback(rect => {
+	let [element, setElement] = React.useState(nodeRef.current);
+	let initialRectIsSet = React.useRef(false);
+	let initialRefIsSet = React.useRef(false);
+	let [rect, setRect] = React.useState(null);
+	let onChangeRef = React.useRef(onChange);
+	let stableOnChange = React.useCallback(rect => {
 		onChangeRef.current && onChangeRef.current(rect);
 	}, []);
 
