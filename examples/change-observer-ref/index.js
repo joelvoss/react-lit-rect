@@ -1,10 +1,10 @@
-import { useRef, useState } from 'react';
+import * as React from 'react';
 import { useRect } from '../../src/index';
 
 export function Example() {
-	const refLeft = useRef();
-	const refRight = useRef();
-	const [whichRect, setWhichRect] = useState(true);
+	const refLeft = React.useRef();
+	const refRight = React.useRef();
+	const [whichRect, setWhichRect] = React.useState(true);
 	const rect = useRect(whichRect ? refLeft : refRight);
 
 	return (

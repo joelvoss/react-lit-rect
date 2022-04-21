@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { Rect } from '../../src/index';
 
 export function Example() {

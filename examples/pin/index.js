@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import * as React from 'react';
 import { Rect } from '../../src/index';
 
 export function Example() {
-	const [pin, setPin] = useState(true);
+	const [pin, setPin] = React.useState(true);
 
 	return (
 		<>

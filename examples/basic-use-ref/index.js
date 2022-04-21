@@ -1,8 +1,8 @@
-import { useRef } from 'react';
+import * as React from 'react';
 import { useRect } from '../../src/index';
 
 export function Example() {
-	const ref = useRef();
+	const ref = React.useRef();
 	const rect = useRect(ref, { observe: true });
 
 	return (

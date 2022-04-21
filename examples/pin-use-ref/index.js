@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react';
+import * as React from 'react';
 import { useRect } from '../../src/index';
 
 export function Example() {
-	const [pin, setPin] = useState(true);
-	const ref = useRef();
+	const [pin, setPin] = React.useState(true);
+	const ref = React.useRef();
 	const rect = useRect(ref, { observe: pin });
 
 	return (
